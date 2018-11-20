@@ -1,0 +1,310 @@
+$base: #324550;
+$orange: #F26B36;
+$yellow: #D6D249;
+$green: #34A983;
+
+
+body
+{
+	padding: 0;
+	margin: 0;
+	font-family: 'Montserrat','Sans Serif', 'Helvetica', 'Arial';
+	background: darken($base,10%);
+	color: lighten($base,65%);
+	font-size: 15px;
+	line-height: 160%;
+
+	h1 { font-size: 30px; line-height: 120%; }
+	h2 { font-size: 24px; line-height: 120%; }
+
+	a, a:visited {
+		text-decoration: none;
+		cursor: pointer;
+		color: $green;
+	}
+	a:hover { opacity: 0.6; }
+
+	img{ max-width: 100%; height:auto; }
+
+	.container {
+		width: 96%;
+		max-width: 1200px;
+		margin: auto;
+		padding: 10px;
+		position: relative;
+	}
+
+	> header {
+		background: $base;
+		border-bottom: 8px solid lighten($base,10%);
+		position:fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		width: 100%;
+		z-index: 1000;
+		height: 46px;
+		.container {
+			height: 100%;
+		}
+		ul{ 
+			width: auto;
+			padding: 0;
+			position: absolute;
+			bottom: -4px;
+			right: 0;
+			font-size: 16px;
+			li{ 
+				display: inline-block;
+				position: relative;
+				margin-left: 2px;
+				&.home, &.about.me { display: none }
+				a{
+					display: block;
+					padding: 5px 15px;
+					position: relative;
+					border-bottom: 8px solid lighten($base,30%);
+					&:hover { opacity: 1;}
+				}
+				&:hover {
+					a {  opacity: 1; }
+				}
+				&.CV{
+				   a { color: $yellow; }
+				   &:hover, &.active { a { border-color: $yellow; } }
+				}
+				&.gallery{
+					a { color: $orange; }
+					&:hover, &.active { a { border-color: $orange; } }
+				 }
+				&.about{
+					a { color: $green; }
+					&:hover, &.active { a { border-color: $green; } }
+				 }
+			}
+
+
+		}
+	}
+	#logo { 
+		width: auto; 
+		float: left; 
+		font-size: 21px; 
+		color: lighten($base,50%);
+		display: block;
+	}
+	#appContainer{
+		padding-top: 50px;
+		padding-bottom: 30px;
+	}
+	.about-box {
+		height: 10px;
+		overflow: visible;
+		width: 100%;
+		position: fixed;
+		top: 58px;
+		left: 0;
+		font-size: 0.9em;
+		
+		&>div{
+			@extend .container;
+			padding: 0 3px 0 0;
+			&>div{
+				width: 33%;
+				@media screen and (max-width: 1024px) {
+					width: 40%;
+				}
+				padding: 17px;
+				border: 1px solid lighten($base,20%);
+				background: rgba($base,0.95);
+				float: right;
+				position: relative;
+
+				img { float: left; max-width: 33%; height: auto; margin-right: 10px; border: 1px solid $base; }
+
+				footer { 
+					color: lighten($base, 30%); 
+					a { display: block; text-align: right; font-size: 1.1em; }
+				}
+				header { font-weight: bold; }
+
+				&:after, &:before {
+					display:block;
+					position: absolute;
+					width: 70px;
+					height: 70px;
+					content: ' ';
+				}
+				&:before {
+					border-right: 8px solid $green;
+					top: -12px;
+					right: -13px;
+				}
+				&:after {
+					border-left: 8px solid $green;
+					border-bottom: 8px solid $green;
+					bottom: -13px;
+					left: -13px;
+					height: 50px;
+					width: 50px;
+				}
+			}
+		}
+	}
+	.page-home {
+		margin-right: 40%;
+		@media screen and (max-width: 1024px) {
+			margin-right:  50%;
+		}
+		footer {
+			color: lighten($base,20%);
+		}
+	}
+	.page-CV {
+		h1 { color: $yellow; }
+
+		.react-json-view {
+			background: none !important;
+			.string-value, .node-ellipsis {
+				color: $yellow !important;
+			}
+			.collapsed-icon {
+				svg, path {
+					color: $green !important;
+					fill: $green !important;
+				}
+			}
+			.expanded-icon {
+				svg, path {
+					color: $orange !important;
+					fill: $orange !important;
+				}
+			}
+			.copy-to-clipboard-container {
+				display: none !important;
+			}
+		}
+	}
+	.page-about {
+		h1 { color: $green;}
+		img{ max-width: 33%; float: left; margin-right: 10px; margin-bottom: 10px;}
+		footer {
+			color: lighten($base,20%);
+		}
+		footer a{ display: block; text-align: right; font-size: 1.3em;}
+	}
+	.page-gallery {
+		h1 { color: $orange; }
+
+        .gallery-tiles > span {
+	        padding-bottom: 0;
+        }
+
+		.tile {
+			padding: 9px;
+			border-radius: 2px;
+			background: rgba(white, 0.1);
+			margin: 0 3px;
+			display: block;
+			border: 1px solid rgba(white, 0);
+			text-align: center;
+			font-size: 0.8em;
+			line-height: 120%;
+			margin-bottom: 7px;
+			.caption { text-align: left; margin-top: 7px; color: lighten($base,65%);}
+			&:hover {
+				border: 1px solid rgba(white, 0.3);
+			}
+		}
+	}
+	.selector {
+		margin-bottom: 20px;
+		a {
+			display: inline-block;
+			background: lighten($base,5%);
+			color: rgba(white,0.8);
+			padding: 5px 15px;
+			border-radius: 1px;
+			margin-right: 10px;
+			margin-bottom: 7px;
+			border: 1px solid rgba(white,0.1);
+			&.active {
+				background: $orange;
+			}
+			&:hover { opacity: 0.7;}
+		}
+	}
+	.zoomer {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: rgba(darken($base,15%), 0.9);
+		z-index: 1001;
+		text-align: center;
+		img {
+			max-width: 90%;
+            max-height: 95vh;
+			margin: 20px auto;
+			z-index: 100;
+		}
+		.caption{
+			position: absolute;
+			bottom: 0;
+			width: 100%;
+			height: auto;
+			padding: 10px 0 20px 0;
+			z-index: 200;
+			background: rgba(darken($base,15%), 0.9);
+		}
+	}
+
+	@media screen and (max-width: 767px) {
+        ul {
+			.about { display: none;}
+			.about.me, .home { display: inline-block !important; }
+		}
+		.page-gallery .tile .caption{ text-align: center; }
+		&> header {
+			.container { margin: 0; width: 100%; }
+			height: auto;
+			padding: 0;
+			border-bottom: none;
+			.container { padding: 0; }
+			#logo {
+				display: none;
+			}
+			ul {
+				background: $base;
+				position: relative;
+				width: 100%;
+				padding: 0;
+				margin: 0;
+				li { 
+					width: 25%; margin-left: 0 !important; font-size: 0.9em;
+					a{ text-align: center; }
+				}
+				li.CV{ width: 18%; }
+				li.about.me{ width: 32%; }
+				li.home a{ color: lighten($base,40%); }
+			}
+			
+		}
+		.page-home{ margin-right: 0;}
+	}
+	@media screen and (max-width: 599px) {
+        .page-gallery {
+			.tile {
+				background: none;
+				padding: 0;
+				padding-bottom: 10px;
+			}
+		}
+		.page-gallery, .page-about, .page-CV {
+			margin-top: 10px;
+			h1 { display: none; }
+		}
+	}
+	
+}

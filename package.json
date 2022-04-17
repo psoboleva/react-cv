@@ -27,7 +27,7 @@
     "gulp-cssmin": "^0.2.0",
     "gulp-if": "^2.0.2",
     "gulp-ignore": "^2.0.2",
-    "gulp-sass": "^3.1.0",
+    "gulp-sass": "^3.2.1",
     "gulp-sourcemaps": "^2.6.4",
     "gulp-uglify": "^3.0.0",
     "object-assign": "^4.1.1",

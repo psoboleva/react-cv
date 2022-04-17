@@ -64,8 +64,8 @@ export class Gallery extends React.Component<IGalleryDisplayProps, IGalleryDispl
           {this.state.data.map(function (content: IGalleryData, index: number) {
             if (content) {
 
-              let url: string = 'http://polina.space/ng4/data/img/JPEG/' + content.file.substr(0, (content.file.length - 12)) + '.jpg';;
-              let zoom: string = 'http://polina.space/ng4/data/img/' + content.file.substr(0, (content.file.length - 12)) + content.file.substr(-4);
+              let url: string = 'https://polina.space/ng4/data/img/JPEG/' + content.file.substr(0, (content.file.length - 12)) + '.jpg';;
+              let zoom: string = 'https://polina.space/ng4/data/img/' + content.file.substr(0, (content.file.length - 12)) + content.file.substr(-4);
               return (
                 <a
                   onClick={() => { this.setState({ zoomed: zoom, caption: content.title }); }}

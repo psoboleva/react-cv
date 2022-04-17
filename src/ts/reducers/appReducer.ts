@@ -8,7 +8,7 @@ import { AppAction } from '../actions/AppStoreActions'
 export const initialState: AppStoreState = {
 	menuItems: pages.slice(0, -1),
 	menuOption: pages[0],
-	introURL: 'http://polina.space/ng4/data/intro2.php',
+	introURL: 'https://polina.space/ng4/data/intro2.php',
 }
 
 export function AppReducer(state: AppStoreState, action: AppAction): AppStoreState {
